@@ -1,0 +1,9 @@
+// default.json
+
+{
+  "mongoURI":
+    "mongodb+srv://hunter:WLDROdXe4L9QAUYT@kaehunterlearning.q3uoe.mongodb.net/?retryWrites=true&w=majority"
+}
+ /* Replace <password> with your database password */
+
+/* ------------------------------------------------------------------ */
