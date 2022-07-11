@@ -1,0 +1,211 @@
+
+/*import Monserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6 
+{
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,input,select 
+{
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img,video 
+{
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,th 
+{
+  padding: 0;
+}
+
+/* end minireset.css */
+
+:root { /* global variables */
+  --bg-blue: #07bbe6;
+  --accent-red: #e22828;
+  --accent-yellow: #fee536;
+  --accent-fuschia: #ec008a;
+}
+
+body {
+  background-color:  var(--bg-blue);
+  font-family: 'Montserrat', sans-serif;
+}
+
+body a {
+ text-decoration:  none;
+ color:  var(--accent-red);
+}
+
+/* ---header section ---*/
+header {
+  background-color: #fff;
+  position: relative;
+  max-width: 100vw;
+}
+
+#deals-bar a {
+  background-color:  black;
+  color:  white;
+  text-decoration:  none;
+  display:  block;
+  width: 100%;
+  text-align: center;
+  padding: 0.3em 0 0.1em 0;
+  position: fixed;
+  margin-top: -3em;
+}
+
+#header-logo {
+  display: block;
+  max-width:  100%;
+  padding:  1em;
+}
+
+header .main-nav {
+  background-color: var(--accent-yellow);
+  box-shadow: 4px 4px 0px var(--accent-red);
+  width:  calc(100% - 4px);
+  text-align: center;
+}
+
+header .main-nav a {
+  text-decoration:  none;
+  color: var(--accent-red);
+  text-transform: uppercase;
+  padding: 0.5em;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: center;
+}
+
+/*-- search bar --*/
+.search-bar {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background: white;
+  width: 100%;
+  max-width: 100vw;
+  display: none;
+}
+
+.search-bar .search-text{
+  flex-grow: 1;
+  overflow: hidden;
+  line-height: 1.5em;
+  border: none;
+  font-size: inherit;
+  vertical-align: middle;
+  padding-left: 0.5em;
+}
+
+.search-bar .search-btn {
+  background-color: var(--accent-red);
+  color: white;
+  border: none;
+ font-size: 1.5em;
+}
+/*-- end search bar --*/
+
+/*-- cart popup --*/
+.cart-popup {
+  position: absolute;
+  width: calc(100% - 0.6em);
+  margin: 0 0.3em;
+  background: white;
+  z-index: 20;
+  padding: 0.5em;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px 0px
+}
+/*-- end cart popup --*/
+
+/*--- end header section ---*/
+
+/*--- main section (shop) ---*/
+
+#products {
+  margin: 3em 0.5em 0;
+  display:  grid;
+  grid-template-columns:  1fr 1fr;
+  column-gap: 0.5em;
+  row-gap: 0.5em;
+}
+
+.product-card {
+  background-color: var(--accent-yellow);
+  padding: 0.5em;
+  position: relative;
+  text-align: center;
+}
+
+.product-images {
+  display: block;
+  position: relative;
+}
+
+.product-card .product-image-2 {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
+.product-card h4{
+  height: 3em;
+  font-weight: 700;
+  margin-bottom: auto;
+}
+
+.product-price {
+  display: block;
+  color: white;
+  background-color: var(--accent-red);
+  font-size: smaller;
+  font-weight: 700;
+}
+
+/*--- end main section (shop) ---*/
+
+/*--- footer section ---*/
+footer {
+  background-color: var(--accent-red);
+}
+
+footer #social-links {
+  background-color: var(--accent-yellow);
+}
+/*--- end footer section ---*/
