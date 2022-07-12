@@ -1,0 +1,95 @@
+/*@media screen and (min-width: 601px) and (max-width: 1280px) {*/
+
+/*--- header section ---*/
+.header-wrap {
+  display: flex;
+  align-items: end;
+  height: 12vh;
+  padding-bottom: 0.5em;
+}
+
+a#header-logo {
+  width: 55%;
+  margin-right: 2%;
+}
+
+.main-nav {
+  max-width: 39%;
+  margin-left: 1em;
+  margin-right: auto;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.9em;
+}
+
+header .main-nav a {
+  padding: 0.7em;
+}
+
+/*-- search bar --*/
+.search-bar {
+width: 40%;
+right: 2em;
+top: 92%;
+}
+
+/*-- end search bar --*/
+
+/*-- mini-cart --*/
+.minicart {
+  top: 100%;
+  width: 40%;
+  left: 30%;
+}
+/*-- end mini-cart --*/
+
+/*--- end header section ---*/
+
+/*--- main section (shop) ---*/
+main {
+  margin: 5em 2em 0;
+}
+
+#products {
+  grid-template-columns: repeat(4, 1fr) !important;
+  column-gap: 1.5em;
+}
+
+/*-- product card --*/
+.product-price {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: 0.5em;
+}
+
+.product-card h4{
+  height: 2.5em;
+}
+/*-- end product card --*/
+
+/*--- end main section (shop) ---*/
+
+/*--- footer section ---*/
+
+#footer-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3em;
+}
+
+#footer-info {
+  padding-left: 0;
+}
+
+.presented-by-logo {
+  width: 20%;
+  margin: 0;
+  padding-top: 3em;
+  margin-right: 0.5em;
+
+}
+
+/*--- end footer section ---*/

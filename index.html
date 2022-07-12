@@ -5,22 +5,37 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<script src="https://kit.fontawesome.com/ec82ed5668.js" crossorigin="anonymous"></script>
   		<link rel="stylesheet" type="text/css" href="css/style.css" />
+  		<link media="only screen and (min-width: 780px)" href="css/tablet.css" type="text/css" rel="stylesheet" />
   		<title>Not the real Omega Mart!</title>
 	</head>
 	<body>
 		<header>
 			<div id="deals-bar"><a href="#">This is <strong>NOT</strong> the real OmegaMart web shop!</a></div>
-			<a href="#" id="header-logo"><img src="img/omegamart-logo-color.svg" alt="OmegaMart Logo"/></a>
-			<nav class="main-nav">
-				<a href="#" id="cart-nav">Cart</a>
-				<a href="#">Log in</a>
-				<a href="#" id="search-nav">Search</a>
-				<a href="#">Shop</a>
-			</nav>
-			<div class="search-bar"><input type="text" class="search-text" name="search-text" placeholder="Search" /><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button></div>
-			<div class="cart-popup">
-				<h3>CART</h3>
-				<p>products go here</p>
+			<div class="header-wrap">
+				<a href="#" id="header-logo"><img src="img/omegamart-logo-color.svg" alt="OmegaMart Logo"/></a>
+				<nav class="main-nav">
+					<a href="#" id="cart-nav">Cart</a>
+					<a href="#">Log in</a>
+					<a href="#" id="search-nav">Search</a>
+					<a href="#">Shop</a>
+				</nav>
+				<div class="search-bar"><input type="text" class="search-text" name="search-text" placeholder="Search" /><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+				<div class="minicart">
+					<ul class="minicart-items">
+						<li>
+							<button class="minicart-remove-item" aria-label="Remove this item">x</button> 
+							<a href="#">Zalgitos Chip Pillow</a>
+							<span class="minicart-quantity">1 x $39.99</span>
+						</li>
+						<li>
+							<button class="minicart-remove-item" aria-label="Remove this item">x</button> 
+							<a href="#">Daikon Plush</a>
+							<span class="minicart-quantity">1 x $34.50</span>
+						</li>
+					</ul>
+					<p class="minicart-subtotal"><span class="bold">Subtotal:</span> $74.49</p>
+					<p class="minicart-buttons"><a class="decorative-button">VIEW CART</a> <a class="decorative-button">CHECKOUT</a></p>
+				</div>
 			</div>
 		</header>
 		<main>
@@ -66,7 +81,7 @@
 							/>
 						</span>
 						<h4 class="product-title">Snowie Penguin Squishie</h4>
-						<p class="product-price">$34.50</p>
+						<p class="product-price">$15.00</p>
 					</a>
 				</article>
 				<article class="product-card singleton">
@@ -106,11 +121,85 @@
 						<p class="product-price">$22.00</p>
 					</a>
 				</article>
+				<article class="product-card">
+					<a href="#">
+						<span class="product-images">
+							<img class="product-image-1" 
+								srcset="img/DSC_5588-300x380.jpg 300w,
+										img/DSC_5588-600x760.jpg 600w"
+								sizes="(max-width: 600px) 300px, 600px"
+								src="img/DSC_5588-300x380.jpg"
+								alt="Whale Song Deoderant"
+							/>
+							<img class="product-image-2" 
+								srcset="img/DSC_5593-300x380.jpg 300w,
+										img/DSC_5593-600x760.jpg 600w"
+								sizes="(max-width: 600px) 300px, 600px"
+								src="img/DSC_5593-300x380.jpg"
+								alt="Whale Song Deoderant"
+							/>
+						</span>
+						<h4 class="product-title">Whale Song Deoderant</h4>
+						<p class="product-price">$9.99</p>
+					</a>
+				</article>
+				<article class="product-card singleton">
+					<a href="#">
+						<span class="product-images">
+							<img class="product-image-1" 
+								srcset="img/DSC_8342-copy-300x380.jpg 300w,
+										img/DSC_8342-copy-600x760.jpg 600w"
+								sizes="(max-width: 600px) 300px, 600px"
+								src="img/DSC_8342-copy-300x380.jpg"
+								alt="Omega Mart Pin"
+							/>
+						</span>
+						<h4 class="product-title">Omega Mart Pin</h4>
+						<p class="product-price">$10.00</p>
+					</a>
+				</article>
+				<article class="product-card">
+					<a href="#">
+						<span class="product-images">
+							<img class="product-image-1" 
+								srcset="img/fullsizeoutput_e4e-scaled-300x380.jpeg 300w,
+										img/fullsizeoutput_e4e-scaled-600x760.jpeg 600w"
+								sizes="(max-width: 600px) 300px, 600px"
+								src="img/fullsizeoutput_e4e-scaled-300x380.jpeg"
+								alt="Fridge Backpack"
+							/>
+							<img class="product-image-2" 
+								srcset="img/fullsizeoutput_e45-scaled-300x380.jpeg 300w,
+										img/fullsizeoutput_e45-scaled-600x760.jpeg 600w"
+								sizes="(max-width: 600px) 300px, 600px"
+								src="img/fullsizeoutput_e45-scaled-300x380.jpeg"
+								alt="Fridge Backpack"
+							/>
+						</span>
+						<h4 class="product-title">Fridge Backpack</h4>
+						<p class="product-price">$75.00</p>
+					</a>
+				</article>
+				<article class="product-card">
+					<a href="#">
+						<span class="product-images">
+							<img class="product-image-1" 
+								srcset="img/DSC_8351-copy-300x380.jpg 300w,
+										img/DSC_8351-copy-600x760.jpg 600w"
+								sizes="(max-width: 600px) 300px, 600px"
+								src="img/DSC_8351-copy-300x380.jpg"
+								alt="Daikon Pin"
+							/>
+						</span>
+						<h4 class="product-title">Daikon Pin</h4>
+						<p class="product-price">$10.00</p>
+					</a>
+				</article>
 			</div>
 			<div id="pagination">
 				<p>Showing items 1-24 of 94</p>
-				<nav class="pagination">
-					<a href="#">1</a>
+				<nav class="pagination-nav">
+					<a href="#" class="current">1</a>
 					<a href="#">2</a>
 					<a href="#">3</a>
 					<a href="#">4</a>
@@ -153,7 +242,7 @@
 					</svg>
 				</a>
 			</div>
-			<p>&copy;MEOW WOLF SHOP 2022</p>
+			<p class="copyright-info">&copy;MEOW WOLF SHOP 2022</p>
 		</footer>
 	</body>
 </html>
