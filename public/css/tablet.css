@@ -1,0 +1,146 @@
+/*@media screen and (min-width: 601px) and (max-width: 1280px) {*/
+
+/*--- header section ---*/
+.header-wrap {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  padding: 0.8em 0 0.7em;
+}
+
+a#header-logo {
+  width: 55%;
+  margin-right: 2%;
+  padding-bottom: 0;
+}
+
+header .main-nav {
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 24em;
+  margin-bottom: 1em;
+  margin-right: 1.5em;
+  font-size: 0.8em;
+  padding: 0 0.5em;
+}
+
+header .main-nav a {
+  padding: 0;
+}
+
+/*-- search bar --*/
+.search-bar {
+width: 40%;
+right: 2em;
+top: 92%;
+}
+
+/*-- end search bar --*/
+
+/*-- mini-cart --*/
+.minicart {
+  top: 100%;
+  width: 40%;
+  left: 30%;
+}
+/*-- end mini-cart --*/
+
+/*--- end header section ---*/
+
+/*--- main section (shop) ---*/
+
+.products {
+  grid-template-columns: repeat(4, 1fr) !important;
+  column-gap: 1.5em;
+  margin: 3.5em 1.5em;
+}
+
+/*-- product card --*/
+.product-card {
+  padding-bottom: 0;
+}
+
+.product-price {
+  position: absolute;
+  top: 1.2em;
+  right: 1.2em;
+  padding: 0.5em;
+  z-index: 5;
+}
+
+.pagination {
+  margin: 0 1.5em;
+}
+
+/*-- end product card --*/
+
+/*--- end main section (shop) ---*/
+
+/*--- product page main section ---*/
+.product-full{
+  padding: 0 1.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2em;
+}
+
+.product-content h1 {
+  padding-top: 0;
+  margin-top: 0;
+  vertical-align: text-top;
+}
+
+.product-suggestions {
+    padding: 0 1.5em; 
+}
+
+.suggestion-cards {
+  grid-template-columns: repeat(4, 1fr);
+}
+/*-- product image gallery --*/
+.image-full-viewer {
+  padding: 2em;
+}
+
+.image-full-viewer figure{
+  max-height:  100%;
+  padding-bottom: 2em;
+}
+
+.image-full-viewer img{
+object-fit: contain;
+max-height:  calc(100vh - 4.5em);
+}
+
+/*-- end product image gallery --*/
+
+/*--- end product page main section ---*/
+
+/*--- footer section ---*/
+
+footer #social-links {
+  justify-content: flex-end;
+  padding-right: 5em;
+}
+
+#footer-main {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3em;
+}
+
+#footer-info {
+  padding-left: 0;
+}
+
+.presented-by-logo {
+  width: 160px;
+  margin: 0;
+  padding-top: 3em;
+  margin-right: 0.5em;
+
+}
+
+/*--- end footer section ---*/

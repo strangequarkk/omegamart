@@ -3,21 +3,26 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   		<meta name="viewport" content="width=device-width, initial-scale=1">
+  		<link rel="icon" type="image/x-icon" href="img/favicon.png">
   		<script src="https://kit.fontawesome.com/ec82ed5668.js" crossorigin="anonymous"></script>
+
   		<link rel="stylesheet" type="text/css" href="css/style.css" />
-  		<link media="only screen and (min-width: 780px)" href="css/tablet.css" type="text/css" rel="stylesheet" />
+  		<link media="only screen and (min-width: 800px)" href="css/tablet.css" type="text/css" rel="stylesheet" />
+  		<link media="only screen and (min-width: 1280px)" href="css/desktop.css" type="text/css" rel="stylesheet" />
+  		<link media="only screen and (hover:hover)" href="css/hovers.css" type="text/css" rel="stylesheet" />
+  		
   		<title>Not the real Omega Mart!</title>
 	</head>
 	<body>
 		<header>
-			<div id="deals-bar"><a href="#">This is <strong>NOT</strong> the real OmegaMart web shop!</a></div>
-			<div class="header-wrap">
-				<a href="#" id="header-logo"><img src="img/omegamart-logo-color.svg" alt="OmegaMart Logo"/></a>
+			<div id="deals-bar"><a href="#">This is <strong>NOT</strong> the real OmegaMart shop!</a></div>
+			<div class="header-wrap constrained-width">
+				<a href="index.html" id="header-logo"><img src="img/omegamart-logo-color.svg" alt="OmegaMart Logo"/></a>
 				<nav class="main-nav">
 					<a href="#" id="cart-nav">Cart</a>
 					<a href="#">Log in</a>
 					<a href="#" id="search-nav">Search</a>
-					<a href="#">Shop</a>
+					<a href="index.html">Shop</a>
 				</nav>
 				<div class="search-bar"><input type="text" class="search-text" name="search-text" placeholder="Search" /><button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button></div>
 				<div class="minicart">
@@ -39,29 +44,85 @@
 			</div>
 		</header>
 		<main>
-			<div id="products">
-				<article class="product-card">
-					<a href="#">
-						<span class="product-images">
+			<article class="product-full constrained-width">
+				<div class="image-gallery">
+					<div class="main-image">
+						<div class="gallery-controls">
+							<button class="gallery-prev" aria-label="previous image"><i class="fa-solid fa-chevron-left"></i></button>
+							<button class="gallery-next" aria-label="next image"><i class="fa-solid fa-chevron-right"></i></button>
+							<button class="gallery-fullscreen" aria-label="larger size of image"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+						</div>
+						<img src="img/Daikon-Plush-1-600x760.jpg" alt="Daikon Plush" />
+					</div>
+					<div class="gallery-thumbs">
+						<img class="gallery-thumb current" src="img/Daikon-Plush-1-300x380.jpg" alt="Daikon Plush"/>
+						<img class="gallery-thumb" src="img/Daikon-Plush-2-300x380.jpg" alt="Daikon Plush sitting"/>
+						<img class="gallery-thumb" src="img/Daikon-Plush-3-300x380.jpg" alt="Daikon Plush waving"/>
+						<img class="gallery-thumb" src="img/Daikon-Plush-4-300x380.jpg" alt="Daikon Plush in neutral pose"/>
+					</div>
+					<div class="image-full-viewer">
+						<p class="image-viewer-counter">1/4</p>
+						<div class="full-image-controls">
+							<button class="image-viewer-zoom zoom-in" title="zoom in">
+								<i class="fa-solid fa-magnifying-glass-plus"></i>
+							</button>
+							<button class="image-viewer-zoom zoom-out" title="zoom out">
+								<i class="fa-solid fa-magnifying-glass-minus"></i>
+							</button>
+							<button class="toggle-fullscreen" title="toggle fullscreen">
+								<i class="fa-solid fa-expand"></i>
+							</button>
+							<button class="close-image-viewer" title="Close (Esc)">
+								<i class="fa-solid fa-xmark"></i>
+							</button>
+						</div>
+						<div class="full-image-nav">
+							<button class="gallery-prev" title="Previous (arrow left)">
+								<i class="fa-solid fa-arrow-left"></i>
+							</button>
+							<button class="gallery-next" title="Next (arrow right)">
+								<i class="fa-solid fa-arrow-right"></i>
+							</button>
+						</div>
+						<figure>
 							<img class="product-image-1" 
-								srcset="img/DSC_5671-300x380.jpg 300w,
-										img/DSC_5671-600x760.jpg 600w"
-								sizes="(max-width: 600px) 300px, 600px"
-								src="img/DSC_5671-300x380.jpg"
+								srcset="img/Daikon-Plush-1-600x760.jpg 600w,
+										img/Daikon-Plush-1-1140x1680.jpg 1140w"
+								sizes="(max-width: 600px) 600px, 1140px"
+								src="img/Daikon-Plush-1-600x760.jpg"
 								alt="Daikon Plush"
 							/>
-							<img class="product-image-2" 
-								srcset="img/DSC_5682-300x380.jpg 300w,
-										img/DSC_5682-600x760.jpg 600w"
-								sizes="(max-width: 600px) 300px, 600px"
-								src="img/DSC_5671-300x380.jpg"
-								alt="Daikon Plush"
-							/>
-						</span>
-						<h4 class="product-title">Daikon Plush</h4>
-						<p class="product-price">$34.50</p>
-					</a>
-				</article>
+							<figcaption>Daikon Plush</figcaption>
+						</figure>
+					</div>
+				</div>
+				<div class="product-content">
+					<h1>Daikon Plush</h1>
+					<h2>$34.50</h2>
+					<div class="product-cart-buttons">
+						<div class="quantity">
+							<input type="number" name="quantity" min="1" max="143" value="1"/>
+							<div class="quantity-nav">
+								<button class="quantity-button quantity-up" aria-label="Increase quantity"><i class="fa-solid fa-caret-up"></i></button>
+								<button class="quantity-button quantity-down" aria-label="Decrease quantity"><i class="fa-solid fa-caret-down"></i></button>
+							</div>
+						</div>
+						<button class="add-to-cart">Add to cart</button>
+					</div>
+					<p class="product-description">Do you love root vegetables? Well, get yourself a cuddly daikon pal that’s bendable, squeezable, and totally rad-ish!
+					</p>
+					<div class="contact-links">
+						<a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+						<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+						<a href="#"><i class="fa fa-pinterest-square fa-2x"></i></a>
+						<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+						<a href="#"><i class="fa fa-envelope-square fa-2x"></i></a>
+					</div>
+
+		</article>
+		<div class="product-suggestions constrained-width">
+			<h3>You may also like...</h3>
+			<div class="suggestion-cards products">
 				<article class="product-card">
 					<a href="#">
 						<span class="product-images">
@@ -77,7 +138,7 @@
 										img/Snowie-Penguin-Squishy-2-scaled-600x760.jpg 600w"
 								sizes="(max-width: 600px) 300px, 600px"
 								src="img/Snowie-Penguin-Squishie-scaled-300x380.jpg"
-								alt="Snowie Penguin Squishie"
+								alt="Snowie Penguin Squishie being squished"
 							/>
 						</span>
 						<h4 class="product-title">Snowie Penguin Squishie</h4>
@@ -92,7 +153,7 @@
 										img/DSC_8390-copy-scaled-600x760.jpg 600w"
 								sizes="(max-width: 600px) 300px, 600px"
 								src="img/DSC_8390-copy-scaled-300x380.jpg"
-								alt="Snowie Penguin Squishie"
+								alt="Glitch Cow Magnet"
 							/>
 						</span>
 						<h4 class="product-title">Glitch Cow Magnet</h4>
@@ -114,7 +175,7 @@
 										img/fullsizeoutput_11b0-scaled-600x760.jpeg 600w"
 								sizes="(max-width: 600px) 300px, 600px"
 								src="img/fullsizeoutput_11b0-scaled-300x380.jpeg"
-								alt="WAM Hole Mug"
+								alt="WAM Hole Mug back"
 							/>
 						</span>
 						<h4 class="product-title">WAM Hole Mug</h4>
@@ -136,87 +197,28 @@
 										img/DSC_5593-600x760.jpg 600w"
 								sizes="(max-width: 600px) 300px, 600px"
 								src="img/DSC_5593-300x380.jpg"
-								alt="Whale Song Deoderant"
+								alt="Whale Song Deoderant back"
 							/>
 						</span>
 						<h4 class="product-title">Whale Song Deoderant</h4>
 						<p class="product-price">$9.99</p>
 					</a>
 				</article>
-				<article class="product-card singleton">
-					<a href="#">
-						<span class="product-images">
-							<img class="product-image-1" 
-								srcset="img/DSC_8342-copy-300x380.jpg 300w,
-										img/DSC_8342-copy-600x760.jpg 600w"
-								sizes="(max-width: 600px) 300px, 600px"
-								src="img/DSC_8342-copy-300x380.jpg"
-								alt="Omega Mart Pin"
-							/>
-						</span>
-						<h4 class="product-title">Omega Mart Pin</h4>
-						<p class="product-price">$10.00</p>
-					</a>
-				</article>
-				<article class="product-card">
-					<a href="#">
-						<span class="product-images">
-							<img class="product-image-1" 
-								srcset="img/fullsizeoutput_e4e-scaled-300x380.jpeg 300w,
-										img/fullsizeoutput_e4e-scaled-600x760.jpeg 600w"
-								sizes="(max-width: 600px) 300px, 600px"
-								src="img/fullsizeoutput_e4e-scaled-300x380.jpeg"
-								alt="Fridge Backpack"
-							/>
-							<img class="product-image-2" 
-								srcset="img/fullsizeoutput_e45-scaled-300x380.jpeg 300w,
-										img/fullsizeoutput_e45-scaled-600x760.jpeg 600w"
-								sizes="(max-width: 600px) 300px, 600px"
-								src="img/fullsizeoutput_e45-scaled-300x380.jpeg"
-								alt="Fridge Backpack"
-							/>
-						</span>
-						<h4 class="product-title">Fridge Backpack</h4>
-						<p class="product-price">$75.00</p>
-					</a>
-				</article>
-				<article class="product-card">
-					<a href="#">
-						<span class="product-images">
-							<img class="product-image-1" 
-								srcset="img/DSC_8351-copy-300x380.jpg 300w,
-										img/DSC_8351-copy-600x760.jpg 600w"
-								sizes="(max-width: 600px) 300px, 600px"
-								src="img/DSC_8351-copy-300x380.jpg"
-								alt="Daikon Pin"
-							/>
-						</span>
-						<h4 class="product-title">Daikon Pin</h4>
-						<p class="product-price">$10.00</p>
-					</a>
-				</article>
 			</div>
-			<div id="pagination">
-				<p>Showing items 1-24 of 94</p>
-				<nav class="pagination-nav">
-					<a href="#" class="current">1</a>
-					<a href="#">2</a>
-					<a href="#">3</a>
-					<a href="#">4</a>
-					<a class="pag-nav-next" href="#">>></a>
-				</nav> 
-				<button class="load-more-products">LOAD MORE</button>
-				<button class="back-to-top">^</button>
-			</div>
+		</div>
+
 		</main>
 		<footer>
-			<div id="social-links">
-				<a href="#"><img src="img/linkedin.svg" alt="linkedin" /></a>
-				<a href="#"><img src="img/twitter.svg" alt="twitter" /></a>
-				<a href="#"><img src="img/instagram.svg" alt="instagram" /></a>
-				<a href="#"><img src="img/facebook.svg" alt="facebook" /></a>
+			<a href="#header-logo" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></a>
+			<div id="social-wrapper">
+				<div id="social-links" class="constrained-width">
+					<a href="#"><img src="img/linkedin.svg" alt="linkedin" /></a>
+					<a href="#"><img src="img/twitter.svg" alt="twitter" /></a>
+					<a href="#"><img src="img/instagram.svg" alt="instagram" /></a>
+					<a href="#"><img src="img/facebook.svg" alt="facebook" /></a>
+				</div>
 			</div>
-			<div id="footer-main">
+			<div id="footer-main" class="constrained-width">
 				<div id="footer-info">
 					<h4>Information</h4>
 					<nav class="footer-nav">
