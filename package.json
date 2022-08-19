@@ -6,7 +6,24 @@
   "scripts": {
     "start": "node index.js",
     "app": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic"
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$": "jest-transform-stub"
+    }
   },
   "repository": {
     "type": "git",
@@ -24,9 +41,20 @@
     "config": "^3.3.7",
     "express": "^4.18.1",
     "mongoose": "^6.3.5",
+    "react": "^18.2.0",
+    "supertest": "^6.2.4",
     "validation": "^0.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "@babel/plugin-syntax-jsx": "^7.18.6",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "babel-jest": "^28.1.3",
+    "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
+    "jest-transform-stub": "^2.0.0",
+    "nodemon": "^2.0.16",
+    "react-test-renderer": "^18.2.0"
   }
 }
