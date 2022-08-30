@@ -1,4 +1,4 @@
 node_modules/
-coverage/
+server/coverage/
 .env
-public/img/
+server/public/img/

@@ -8,7 +8,7 @@ const ProductSchema = new mongoose.Schema({
     required: true
   },
   price: {
-    type: NumberDecimal,
+    type: Number, //TODO: add validator for decimal type
     required: true
   },
   description: {
@@ -18,7 +18,12 @@ const ProductSchema = new mongoose.Schema({
     type: String
   }],
   stock_qty: {
-    type: Integer
+    type: Number,
+    default: 25,
+    validate : {
+     validator : Number.isInteger,
+     message   : '{VALUE} is not an integer value'
+   }
   },
   updated_date: {
     type: Date,
@@ -26,4 +31,4 @@ const ProductSchema = new mongoose.Schema({
   }
 });
 
-module.exports = Product = mongoose.model('product', ProductSchema);
+export default mongoose.model('Product', ProductSchema);

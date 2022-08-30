@@ -1,13 +1,18 @@
-const Router = require('express');
+const express = require('express');
+const router = express();
+const path = require("path");
 
-
-const router = Router();
+router.use(express.static("public"));
 
 router.get('/', (req, res) => {
-	res.send('home page');
+	 res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-router.get('/shop/:category', (req, res) => {
+router.get('/api', (req, res) => {
+	res.json({"message": "Hello omegamart api!"});
+})
+
+/*router.get('/shop/:category', (req, res) => {
 	res.send('show products in category '+req.params.category);
 })
 
@@ -29,7 +34,7 @@ router.get('/login', (req, res) => {
 
 router.get('/manage', (req, res) => {
 	res.send('gonna have to figure out how to restrict this page to logged-in users etc')
-})
+})*/
 
 //The 404 Route (ALWAYS Keep this as the last route)
 router.get('*', function(req, res){

@@ -1,12 +1,39 @@
-const request = require('supertest');
-const express = require('express');
-const router = require('../main.js');
+import request from 'supertest';
+import express from 'express';
+import router from'../main.js';
 
 const app = new express();
 app.use('/', router);
 
+//TODO: rework to test for API paths rather than user-facing pages
+//i guess you'll be testing for appropriate JSON responses?
 
-describe("main pages work", function () {
+//get product
+//create product
+//update product
+//delete product
+
+//(category? idk how mongo deals with associations like this)
+//get category
+//create category
+//edit category
+//delete category
+//ditto for product images, imagesets???
+
+//get user
+//create user
+//update user
+//delete user
+describe("basic api functionality", function() {
+
+	test("hello api response", async() =>{
+		const res = await request(app).get('/api');
+		expect(res.statusCode).toBe(200);
+		expect(res.body.message).toEqual("Hello omegamart api!");
+	})
+	
+});
+/*describe("main pages work", function () {
 
 	test('home page exists', async () => { 		
 		const res = await request(app).get('/');
@@ -63,4 +90,4 @@ describe("main pages work", function () {
     	expect(res.statusCode).toBe(404);
     	expect(res.text).toEqual('uh oh kiddos');
 	} );
-});
+});*/

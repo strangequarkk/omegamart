@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db');
 const router = require('./routes/main.js');
+
 
 const app = express();
 
@@ -9,7 +11,6 @@ connectDB();
 
 app.use(router);
 
-//app.get('/', (req, res) => res.send('Hello world!'));
 
 const port = process.env.PORT || 8082;
 
