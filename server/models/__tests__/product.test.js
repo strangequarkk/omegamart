@@ -2,13 +2,7 @@ import mongoose  from "mongoose";
 import Product from "../Product";
 import db from "../../config/memory_server.js";
 
-const productData = {
-	name : "Whale Song Deoderant",
-	price: 9.99,
-	description: "A vegan antiperspirant and antidepressant for all genders.",
-	image_urls: ["DSC_5588-300x380.jpg", "DSC_5588-600x760.jpg"],
-	stock_qty: 25
-};
+const productData = require('./data/product_data.js');
 
 beforeAll( async () => {
 	await db.setUp();
@@ -28,10 +22,12 @@ describe("Product model", () => {
 		const savedProduct = await validProduct.save();
 
 		expect(savedProduct._id).toBeDefined();
+		expect(savedProduct.name).toBe(productData.name);
 		expect(savedProduct.price).toBe(productData.price);
 		expect(savedProduct.description).toBe(productData.description);
-		expect(savedProduct.image_urls).toEqual(productData.image_urls);
+		expect(savedProduct.images[0].small).toEqual(productData.images[0].small);
 		expect(savedProduct.stock_qty).toBe(productData.stock_qty);
+		expect(savedProduct.category).toBe(productData.category);
 		expect(savedProduct.updated_date).toBeDefined();
 	});
 

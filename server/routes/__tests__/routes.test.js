@@ -1,24 +1,32 @@
 import request from 'supertest';
 import express from 'express';
+const bodyParser = require("body-parser");
 import router from'../main.js';
+import testProduct from "../../models/__tests__/data/product_data.js";
+import db from "../../config/memory_server.js";
+const mongoose = require('mongoose');
 
 const app = new express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 app.use('/', router);
+
+beforeAll( async () => {
+	await db.setUp();
+});
+
+afterEach( async () => {
+	await db.dropCollections();
+});
+
+afterAll( async () => {
+	await db.dropDatabase();
+});
 
 //TODO: rework to test for API paths rather than user-facing pages
 //i guess you'll be testing for appropriate JSON responses?
 
-//get product
-//create product
-//update product
-//delete product
 
-//(category? idk how mongo deals with associations like this)
-//get category
-//create category
-//edit category
-//delete category
-//ditto for product images, imagesets???
 
 //get user
 //create user
@@ -31,59 +39,48 @@ describe("basic api functionality", function() {
 		expect(res.statusCode).toBe(200);
 		expect(res.body.message).toEqual("Hello omegamart api!");
 	})
+
+	test("api responds to post", async() =>{
+		const msg = "hello from jest route testing"
+		try {
+			const res = await request(app).post('/api/')
+					.set('Content-type', 'application/json')
+					.send({ hello: msg});
+			expect(res.statusCode).toBe(200);
+			expect(res.body.message).toEqual("successful post request " + msg);
+
+			//console.log(res.body);
+		} catch (err){
+			console.log("post failed ", err);
+		}
+		
+	})
 	
 });
-/*describe("main pages work", function () {
 
-	test('home page exists', async () => { 		
-		const res = await request(app).get('/');
-	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-    	expect(res.statusCode).toBe(200);
-    	expect(res.text).toEqual('home page')
-    });
+//get product
+//create product
+//update product
+//delete product
+describe("Product CRUD", function() {
+	test("create new product", async () => {
+		const res = await request(app).post('/api/products/')
+			.set('Content-type', 'application/json')
+			.send(testProduct);
+		expect(res.statusCode).toBe(200);
+		expect(res.body.message).toEqual("Product added successfully");
+		
+	})
 
-    test("can view product by category", async () => {
-    	const res = await request(app).get('/shop/mugs');
-	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-    	expect(res.statusCode).toBe(200);
-    	expect(res.text).toEqual('show products in category mugs'); 
-    });
+	/*test("list all products", async() =>{
+		const res = await request(app).get('/api/products');
+		expect(res.statusCode).toBe(200);
+		expect(res.body.data.length).toBeGreaterThan(0);
+	})*/
 
-	test("can view product by id", async () => { 		
-		const res = await request(app).get('/product/5');
-	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-    	expect(res.statusCode).toBe(200);
-    	expect(res.text).toEqual('Product with id 5');
-    });
-
-	test("cart route", async () => { 		
-		const res = await request(app).get('/cart');
-	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-    	expect(res.statusCode).toBe(200);
-    	expect(res.text).toEqual('view cart'); 
-    });
-
-	test("checkout route", async () => { 		
-		const res = await request(app).get('/checkout');
-	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-    	expect(res.statusCode).toBe(200);
-    	expect(res.text) .toEqual('checkout page');
-    });
-
-    test("login route", async () => { 		
-		const res = await request(app).get('/login');
-	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-    	expect(res.statusCode).toBe(200);
-    	expect(res.text).toEqual('login page, gonna have to deal with that eventually');
-    });
-
-    test("database management", async () => { 		
-		const res = await request(app).get('/manage');
-	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');
-    	expect(res.statusCode).toBe(200);
-    	expect(res.text).toEqual('gonna have to figure out how to restrict this page to logged-in users etc')
-    });
-
+	
+});
+/*
 	test("default 404 route", async () => {
 		const res = await request(app).get('/roadtonowhere');
 	    expect(res.header['content-type']).toBe('text/html; charset=utf-8');

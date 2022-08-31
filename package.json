@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server/index.js",
     "app": "nodemon server/index.js",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage",
+    "test:server": "jest --testPathPattern=server/"
   },
   "babel": {
     "presets": [
@@ -25,7 +26,10 @@
       ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$": "jest-transform-stub",
       "^.+\\.(ts|tsx)$": "ts-jest",
       "^.+\\.(js)$": "babel-jest"
-    }
+    },
+    "testPathIgnorePatterns": [
+      "data"
+    ]
   },
   "repository": {
     "type": "git",
@@ -41,6 +45,7 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "config": "^3.3.7",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "mongodb-memory-server": "^8.8.0",

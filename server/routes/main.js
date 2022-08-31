@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express();
 const path = require("path");
+const productApi = require("./api/product_routes.js");
 
 router.use(express.static("public"));
 
@@ -12,6 +13,11 @@ router.get('/api', (req, res) => {
 	res.json({"message": "Hello omegamart api!"});
 })
 
+router.post('/api', (req, res) => {
+	res.json({"message": "successful post request "+req.body.hello});
+})
+
+router.use("/api/products", productApi);
 /*router.get('/shop/:category', (req, res) => {
 	res.send('show products in category '+req.params.category);
 })

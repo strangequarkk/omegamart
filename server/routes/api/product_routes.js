@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Load Product model
-const Product = require('../../models/Product');
+const Product = require('../../models/Product.js');
 
 // @route GET api/products/test
 // @description tests products route
@@ -27,13 +27,13 @@ router.get('/:id', (req, res) => {
     .catch(err => res.status(404).json({ noproductfound: 'No Product found' }));
 });
 
-// @route GET api/products
+// @route POST api/products
 // @description add/save product
 // @access Public
 router.post('/', (req, res) => {
   Product.create(req.body)
-    .then(Product => res.json({ msg: 'Product added successfully' }))
-    .catch(err => res.status(400).json({ error: 'Unable to add this product' }));
+    .then(Product => res.json({product: req.data, message: 'Product added successfully' }))
+    .catch(err => res.status(400).json({ error: 'Unable to add this product; '+ err }));
 });
 
 // @route GET api/products/:id
