@@ -17,9 +17,14 @@ function App() {
 
   })
 
+
+  const querySearch = (queryString) => {
+    console.log('run search for '+queryString);
+  }
+
   return (
  <>
- <Header/>
+ <Header searchFunc={querySearch}/>
  <main>
    <ShopPage/>
  </main>

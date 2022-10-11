@@ -86,7 +86,9 @@ body a {
 .bold {
   font-weight: bold;
 }
-
+.visible {
+  display: block !important;
+}
 /* ---header section ---*/
 header {
   background-color: #fff;
