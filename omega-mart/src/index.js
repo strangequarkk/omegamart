@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
+
+// const winWidth  = window.innerWidth || document.documentElement.clientWidth || 
+// document.body.clientWidth;
+// if(winWidth > 800){
+//   import './css/tablet.css';
+// }
+
+// if(winWidth > 1280){
+//   import './css/desktop.css';
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

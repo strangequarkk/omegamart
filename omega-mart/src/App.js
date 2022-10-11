@@ -1,38 +1,30 @@
-import './App.css';
+//import './App.css';
 import React from "react";
+import axios from "axios";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import ShopPage from "./components/pages/ShopPage";
 
 function App() {
 
   const [data, setData] = React.useState(null);
 
-  // React.useEffect(() => {
-  //   fetch("/api")
-  //   .then((res) => res.json())
-  //   .then((data) => setData(data.message));
-  // })
-  const jsonMessage = JSON.stringify({ hello: "hello from post request" });
+  const jsonMessage = { hello: "hello from post request" };
   React.useEffect(() => {
 
-    fetch("/api", {
-      method: 'POST',
-      headers:{
-        'Content-Type': 'application/json'
-      },
-      body: jsonMessage 
-    })
-    .then((res) => res.json())
-    .then((data) => setData(data.message));
+    axios.post("/api", jsonMessage)
+    .then((res) => setData(res.data.message));
+
   })
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          { !data ? "calling the api..." : data}
-        </p>
-       
-      </header>
-    </div>
+ <>
+ <Header/>
+ <main>
+   <ShopPage/>
+ </main>
+ <Footer/>
+ </>
   );
 }
 

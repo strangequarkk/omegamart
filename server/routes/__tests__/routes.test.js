@@ -23,9 +23,11 @@ afterAll( async () => {
 	await db.dropDatabase();
 });
 
-//TODO: rework to test for API paths rather than user-facing pages
-//i guess you'll be testing for appropriate JSON responses?
-
+async function createProduct(product = testProduct) {
+	return request(app).post('/api/products/')
+			.set('Content-type', 'application/json')
+			.send(product);
+}
 
 
 //get user
@@ -63,20 +65,42 @@ describe("basic api functionality", function() {
 //update product
 //delete product
 describe("Product CRUD", function() {
-	test("create new product", async () => {
-		const res = await request(app).post('/api/products/')
-			.set('Content-type', 'application/json')
-			.send(testProduct);
+	test("list all products", async() =>{
+		const product1 = await createProduct({name: "Whale Song Deoderant", price: 4.50});
+		const product2 = await createProduct({name: "Blitz Spray Horse Plush", price: "39.50"});
+
+		const res = await request(app).get('/api/products/');
 		expect(res.statusCode).toBe(200);
-		expect(res.body.message).toEqual("Product added successfully");
-		
+		expect(res.body.length).toBeGreaterThan(1);
+	});
+
+	test("get single product by id", async() => {
+		const product = await createProduct();
+		const res = await request(app).get('/api/products/'+product.body.product._id);
+		expect(res.statusCode).toBe(200);
+		expect(res.body.name).toEqual(testProduct.name);
+
 	})
 
-	/*test("list all products", async() =>{
-		const res = await request(app).get('/api/products');
+	test("create new product", async () => {
+		const res = await createProduct();
+		expect(res.statusCode).toBe(201);
+		expect(res.body.message).toEqual("Product added successfully");
+		
+	});
+
+	test("update existing product", async () => {
+		const newName = "Gender Fluid Sparkling Water"
+		const product = await createProduct();
+		const res = await request(app).put('/api/products/'+ product.body.product._id).send({name: newName});
 		expect(res.statusCode).toBe(200);
-		expect(res.body.data.length).toBeGreaterThan(0);
-	})*/
+		expect(res.body.message).toEqual("Updated successfully");
+		expect(res.body.product.name).toEqual(newName);
+		
+	});
+
+
+
 
 	
 });

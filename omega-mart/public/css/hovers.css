@@ -1,0 +1,66 @@
+/*Stylesheet for hover animations, only used when device has hover ability*/
+
+
+/*-- product cards: fade into secondary product image on hover --*/
+.product-image-1 {
+	transition: opacity .3s ease;
+}
+.product-card:not(.singleton) .product-image-1:hover {
+	opacity: 0;
+}
+
+/*-- underline pagination links --*/
+.pagination-nav a:hover {
+	text-decoration: underline;
+}
+
+/*-- "load more" button change color on hover --*/
+.load-more-products {
+	transition: 0.25s all ease-in-out;
+}
+.load-more-products:hover {
+	background: var(--om-indigo);
+}
+
+/*-- fancy cart & checkout buttons change color on hover --*/
+.decorative-button:hover {
+	color: var(--om-blue);
+	background-color: var(--om-red);
+	border-color: var(--om-red);
+}
+
+/*-- product image gallery --*/
+.image-gallery .main-image:hover {
+	cursor: crosshair;
+}
+
+.image-gallery .gallery-thumbs img:not(.current):hover {
+	opacity: 75%;
+}
+
+.gallery-thumbs img {
+  transition: opacity .25s cubic-bezier(.215,.61,.355,1);
+  cursor: pointer;
+}
+
+.gallery-controls button {
+	transition: all .1s ease-out;
+	cursor: pointer;
+}
+
+.gallery-controls button:hover {
+	opacity: 100%;
+}
+
+.gallery-controls .gallery-prev:hover {
+	margin-left: -2px;
+}
+
+.gallery-controls .gallery-next:hover {
+	margin-right: -2px;
+}
+
+.gallery-controls .gallery-fullscreen:hover {
+	margin-bottom: 2px;
+	margin-right: 2px;
+}
