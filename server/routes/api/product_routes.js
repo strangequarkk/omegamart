@@ -41,7 +41,6 @@ router.get('/:id', (req, res) => {
 // @description Update Product
 // @access Public
 router.put('/:id', (req, res) => {
-  console.log("PUT path");
   console.log(req.body);
   Product.findByIdAndUpdate(req.params.id, req.body, {returnDocument: "after"})
     .then(product => res.json({ product: product, message: 'Updated successfully' }))

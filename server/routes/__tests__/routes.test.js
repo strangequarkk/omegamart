@@ -92,7 +92,8 @@ describe("Product CRUD", function() {
 	test("update existing product", async () => {
 		const newName = "Gender Fluid Sparkling Water"
 		const product = await createProduct();
-		const res = await request(app).put('/api/products/'+ product.body.product._id).send({name: newName});
+		const res = await request(app).put('/api/products/'+ product.body.product._id)
+										.send({name: newName});
 		expect(res.statusCode).toBe(200);
 		expect(res.body.message).toEqual("Updated successfully");
 		expect(res.body.product.name).toEqual(newName);
